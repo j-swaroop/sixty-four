@@ -1,0 +1,38 @@
+.carousel-imgg{
+    width: 100%;
+    height: 180px;
+}
+.carousel-item{
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 360px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.carousel-text{
+    font-size: 15px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    color: rgb(27, 27, 27);
+    margin-bottom: 10px;
+}
+.carousel-text-container{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    padding-bottom: 10px;
+    height: 40%;
+}
+.carousel-description{
+    font-size: 13px;
+    font-family: 'Roboto';
+    color: rgb(92, 92, 92);
+    padding-bottom: 10px;
+}

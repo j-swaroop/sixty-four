@@ -1,0 +1,111 @@
+.sidebar{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    justify-content: space-between;
+    border-right: 1px solid rgb(226, 225, 225);
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.open{
+    width: 200px;
+    
+}
+
+
+.nav-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+}
+.hamburger-icon{
+    background-color: rgb(26, 26, 73);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.hamburger-icon:hover{
+    background-color: white;
+    border: 1px solid rgb(26, 26, 73);
+    color: black;
+}
+.icon{
+    color: rgb(103, 103, 103);
+    font-size: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+
+}
+.icon:hover{
+    color: rgb(23, 23, 23);
+}
+.icon-setting{
+    color: rgb(103, 103, 103);
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.nav-expand{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding-bottom: 20px;
+    
+}
+.nav-expand:hover{
+    width: ease-out;
+}
+.nav-expand-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-text{
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: rgb(103, 103, 103);
+    margin-bottom: 25px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.nav-close{
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: rgb(103, 103, 103);
+    margin-right: 50px;
+    font-weight: bold;
+}
+.nav-expand-list{
+    padding-left: 0;
+    list-style-type: none;
+    margin-bottom: 50px;
+}
+.nav-setting{
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: rgb(103, 103, 103);
+    margin-right: 40px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}

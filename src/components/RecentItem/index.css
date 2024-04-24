@@ -1,0 +1,33 @@
+.each-recent-item{
+    margin-top: 15px;
+    padding-top: 5px;
+    
+}
+.recent-date{
+    color: rgb(45, 188, 245);
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: 600px;
+}
+.recent-author{
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: bold;
+    font-weight: 600px;
+    margin-top: 4px;
+}
+.recent-content{
+    font-family: 'Roboto';
+    font-size: 13px;
+    color: gray;
+    margin-top: 4px;
+    
+}
+.item-recent{
+    display: flex;
+    align-items: center;
+}
+.hr{
+    height: 120px;
+    margin-right: 10px;
+}
