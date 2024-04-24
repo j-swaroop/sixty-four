@@ -109,8 +109,8 @@ class Home extends Component{
     renderHomeData = () => {
         const {homeData, viewMore} = this.state
 
-        const arr = homeData
-        arr.reverse()
+        // const arr = homeData
+        // arr.reverse()
         
         const viewMoretext = viewMore ? 'View Less': 'View More'
         return (
@@ -120,7 +120,7 @@ class Home extends Component{
                 </div>
                 {viewMore && 
                     (<div className="carousel-container">
-                        <Carousel carouselData={arr}/>
+                        <Carousel carouselData={homeData}/>
                      </div>)
                 }
                 <button className="view-more-btn" onClick={this.onClickViewMore}>{viewMoretext}</button>
