@@ -68,17 +68,18 @@ class Home extends Component{
     getHomeData = async () => {
         this.setState({apiStatus: apiStatusConstans.inProgress})
 
-        const url = 'https://newsapi.org/v2/everything?q=tesla&from=2024-03-24&sortBy=publishedAt&apiKey=36c6d140fece4aa0aa54bfb8acf311e6';
-
+        // const url = 'https://newsapi.org/v2/everything?q=tesla&from=2024-03-24&sortBy=publishedAt&apiKey=36c6d140fece4aa0aa54bfb8acf311e6';
+        const url = 'https://api.webz.io/newsApiLite?token=c7414d09-bce2-4f48-99d4-d8f432143ffa&q=Bitcoin'
         const response = await fetch(url);
         if (response.ok === true){
             const result = await response.json();
             
-            const updatedData = result.articles.map(item => ({
+            const updatedData = result.posts.map(item => ({
                 id: v4(),
                 title: item.title,
-                description: item.description,
-                imgUrl: item.urlToImage,
+                description: item.highlightText,
+                imgUrl: item.thread.main_image
+                ,
             }))
             this.setState({apiStatus: apiStatusConstans.success, homeData: updatedData})
        
@@ -107,18 +108,19 @@ class Home extends Component{
 
     renderHomeData = () => {
         const {homeData, viewMore} = this.state
-        const carouselOne = homeData.slice(1, 15)
-        const carouselTwo = homeData.slice(16, 30)
 
+        const arr = homeData
+        arr.reverse()
+        
         const viewMoretext = viewMore ? 'View Less': 'View More'
         return (
             <>
                 <div className="carousel-container">
-                    <Carousel carouselOne={carouselOne}/>
+                    <Carousel carouselData={homeData}/>
                 </div>
                 {viewMore && 
                     (<div className="carousel-container">
-                        <Carousel carouselOne={carouselTwo}/>
+                        <Carousel carouselData={arr}/>
                      </div>)
                 }
                 <button className="view-more-btn" onClick={this.onClickViewMore}>{viewMoretext}</button>

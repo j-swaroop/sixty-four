@@ -42,16 +42,17 @@ class RecentReleases extends Component{
     getRecentData = async () => {
         this.setState({apiStatus: apiStatusConstans.inProgress})
 
-        const url = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=36c6d140fece4aa0aa54bfb8acf311e6'
+        // const url = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=36c6d140fece4aa0aa54bfb8acf311e6'
+        const url = 'https://api.webz.io/newsApiLite?token=c7414d09-bce2-4f48-99d4-d8f432143ffa&q=Bitcoin'
 
         const response = await fetch(url)
         if (response.ok === true){
             const data = await response.json()
-            const updatedData = data.articles.map(item => ({
+            const updatedData = data.posts.map(item => ({
                 id: v4(),
                 author: item.author,
-                content: item.content,
-                publishedAt: item.publishedAt
+                content: item.highlightText,
+                publishedAt: item.published
             }))
 
             this.setState({apiStatus: apiStatusConstans.success, recentData: updatedData})
@@ -61,10 +62,10 @@ class RecentReleases extends Component{
 
     renderRecentData = () => {
         const {recentData} = this.state
-        const recentUpdatedData = recentData.slice(0, 55)
+        // const recentUpdatedData = recentData.slice(0, 55)
         return(
             <ul className='recent-data'>
-                {recentUpdatedData.map(item => <RecentItem key={item.id} data={item}/>)}
+                {recentData.map(item => <RecentItem key={item.id} data={item}/>)}
             </ul>
         )
     }

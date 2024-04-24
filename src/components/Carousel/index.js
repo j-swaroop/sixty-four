@@ -30,8 +30,8 @@ return (
 
 const Carousel = props => {
     
-    const {carouselOne} = props
-
+    const {carouselData} = props
+  
     var settings = {
         dots: true,
         infinite: true,
@@ -63,7 +63,7 @@ const Carousel = props => {
     return(
         <div className="carousel">
             <Slider {...settings}>
-                {carouselOne.map(item => 
+                {carouselData.map(item => 
                     <CarouselItem key={item.id} data={item} />
                 )}
             </Slider>
